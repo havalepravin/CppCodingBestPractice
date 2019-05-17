@@ -1,0 +1,140 @@
+Four types of cating :
+
+1. Dynamic casting
+2. Implicit casting/Reinterpret 
+3. constant casting
+4. Static casting
+
+Tip04:RAII- Resource allocation Is Initialization.
+
+When to use Smart pointer?
+:- When someone else is creating memory by new and if it is allocating for you then use SP.
+Dont go with auto_ptr.
+Go with Shared_ptr and unique_ptr;
+unique_ptr:- assignment is not possible of 2 unique_ptr. We can call swap member function. It is replaced by auto_ptr.
+Shared_ptr:- Refernce count maintined. 
+Weak_Ptr : For cyclic dependency. 
+For above ptr need to add header file : <memory>
+
+Tip05:
+Const variable can not invoke Non-const method.	
+
+Try to make it your member function const.
+When to make function const?
+:- As per as possible that your function will not be modified.
+
+Two kinds of function:
+
+Global function static & non-static No const 
+Member Function static & non-static const 
+This pointer come in picture use const.
+
+*Use always case variable when bottle-neck occurs.
+
+This pointer exists in non static member function only. it is not data member of any object.
+
+* SetR will not call on Const objects.
+
+Tip06:
+
+To avoid multiple inclusion 
+#If !defined(POINT_H)
+#define POINT_H
+..
+..
+#end if
+
+One thread one stack
+
+Tip11:
+Forward declaration use only when any ptr or ref member object is in class. But still header inclusion is good practice.
+
+
+====================================================================================================================================
+
+===========================*******************Day02****************=================================================================
+
+Tip01:
+
+Upcasting and downcasting
+:
+
+		Base class
+		|__D1
+		|__D2
+		|__D3
+		|__D4
+		
+D1 u;
+Base pbase,*pb = &u; //upcasting
+D1 *pd = pbase; //Downcasting
+
+Dynamic const:
+what is means by polymorphic class in case of dynamic downcasting. It can achieve only by vitual mathod in Base class.
+
+Const cast:
+
+reinterpret cast:
+Use in controlled way. The use of this cast is for type casting.
+
+Tip05:
+
+Dont use memset with non-PODs  (Plain old data -collection of data only)
+
+Tip06:
+
+There are 3 kinds of parameters:
+
+In parameter: Use void f(const Interger &a) mostly for user defined data type.
+Out parameter: Use pointer void f(Interger *pa)
+In/Out parameter: voif f (Interger &a)
+
+Precndition:
+
+Assert(ptr != NULL) :-It will break the code. It is effectiv in debug configuration . Use mostly for one/single point failure.
+if (ptr != NULL) {throw someexception}:- it ma throw exception . Used in release configuration. Vice versa
+		
+Tip07:
+
+Must initialize class data member in the same order as they appeared in the declaration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
